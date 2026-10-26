@@ -23,6 +23,22 @@ class LinkedList {
     newNode.nextNode = this.head;
     this.head = newNode;
   }
+
+  size() {
+    if (this.head === null) {
+      return 0;
+    }
+
+    let current = this.head;
+    let total = 0;
+
+    while (current !== null) {
+      total++;
+      current = current.nextNode;
+    }
+
+    return total;
+  }
 }
 
 class Node {
