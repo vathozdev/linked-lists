@@ -91,6 +91,24 @@ class LinkedList {
 
     return current.value;
   }
+
+  contains(value) {
+    if (this.head === null) {
+      return false;
+    }
+
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+
+      current = current.nextNode;
+    }
+
+    return false;
+  }
 }
 
 class Node {
