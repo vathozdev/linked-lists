@@ -39,6 +39,12 @@ class LinkedList {
 
     return total;
   }
+
+  head() {
+    if (this.head === null) return;
+
+    return this.head;
+  }
 }
 
 class Node {
