@@ -80,6 +80,17 @@ class LinkedList {
 
     return current.value;
   }
+
+  pop() {
+    if (this.head === null) {
+      return;
+    }
+
+    let current = this.head;
+    this.head = current.nextNode;
+
+    return current.value;
+  }
 }
 
 class Node {
