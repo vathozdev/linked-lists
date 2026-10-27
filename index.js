@@ -45,6 +45,8 @@ class LinkedList {
 
     return this.head;
   }
+
+  
 }
 
 class Node {
