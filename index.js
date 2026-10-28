@@ -182,3 +182,5 @@ class Node {
     this.nextNode = null;
   }
 }
+
+export { LinkedList };
