@@ -145,6 +145,21 @@ class LinkedList {
     result += `null`;
     return result;
   }
+
+  insertAt(index, ...values) {
+    if (index < 0 || index > this.size()) {
+      throw new RangeError("Index must be in the boundaries");
+    }
+
+    let current = this.head;
+
+    if (index === 0) {
+      let newNode = new Node(value);
+      newNode.nextNode = this.head;
+      this.head = newNode;
+      current = this.head;
+    }
+  }
 }
 class Node {
   constructor(value) {
