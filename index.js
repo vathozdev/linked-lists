@@ -127,8 +127,25 @@ class LinkedList {
 
     return -1;
   }
-}
 
+  toString() {
+    if (this.head === null) {
+      return "";
+    }
+    let current = this.head;
+    let result = "";
+    while (current !== null) {
+      let stringForm = `( ${current.value} )`;
+      result += stringForm;
+      if (current.nextNode !== null) {
+        result += ` -> `;
+      }
+      current = current.nextNode;
+    }
+    result += `null`;
+    return result;
+  }
+}
 class Node {
   constructor(value) {
     this.value = value;
