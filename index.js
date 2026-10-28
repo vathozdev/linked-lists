@@ -175,6 +175,22 @@ class LinkedList {
       current.nextNode = firstNewNode;
     }
   }
+  removeAt(index) {
+    if (index < 0 || index >= this.size()) {
+      throw new RangeError("Index must be in the boundaries");
+    }
+
+    if (index === 0) {
+      this.head = this.head.nextNode;
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current.nextNode;
+      }
+      let nextValue = current.nextNode;
+      current.nextNode = nextValue.nextNode;
+    }
+  }
 }
 class Node {
   constructor(value) {
