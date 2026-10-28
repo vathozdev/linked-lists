@@ -142,7 +142,7 @@ class LinkedList {
       }
       current = current.nextNode;
     }
-    result += ` null`;
+    result += ` -> null`;
     return result;
   }
 
