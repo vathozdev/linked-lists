@@ -151,13 +151,28 @@ class LinkedList {
       throw new RangeError("Index must be in the boundaries");
     }
 
-    let current = this.head;
+    if (values.length === 0) return;
+
+    let firstNewNode = new Node(values[0]);
+    let lastNewNode = firstNewNode;
+
+    for (let i = 1; i < values.length; i++) {
+      let newNode = new Node(values[i]);
+      lastNewNode.nextNode = newNode;
+      lastNewNode = newNode;
+    }
 
     if (index === 0) {
-      let newNode = new Node(value);
-      newNode.nextNode = this.head;
-      this.head = newNode;
-      current = this.head;
+      lastNewNode.nextNode = this.head;
+      this.head = firstNewNode;
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current.nextNode;
+      }
+
+      lastNewNode.nextNode = current.nextNode;
+      current.nextNode = firstNewNode;
     }
   }
 }
